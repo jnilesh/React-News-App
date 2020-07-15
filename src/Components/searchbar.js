@@ -1,5 +1,4 @@
 import React from 'react';
-import Fetch from './Fetch';
 
 export default class SearchBar extends React.Component {
 
@@ -18,13 +17,16 @@ export default class SearchBar extends React.Component {
 
 
     handleSubmit(event) {
+        let topic = this.state.value;
+        this.props.getdata(topic);
         this.setState.currentSearch = true;
         // 031fbd6bd5b5cccf859871f467e9b93e
         alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
     }
 
 
-    handleChange(event) {
+    handleChange=(event)=> {
         this.setState({value: event.target.value});
     }
 
@@ -37,10 +39,8 @@ export default class SearchBar extends React.Component {
 
                 <form onSubmit={this.handleSubmit} >
                     <i className="fas fa-search" aria-hidden="true"/>
-                    <input className="form-control" type="text" placeholder="Search" aria-label="Search" value={this.state.value} onChange={this.handleChange}/>  
+                    <input className="form-control" type="text" placeholder="Search for another topic" aria-label="Search" value={this.state.value} onChange={this.handleChange}/>  
                 </form>
-
-                <Fetch topic={this.state.value} />
 
              </div>
         );

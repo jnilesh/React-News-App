@@ -51,9 +51,12 @@ export default class TopNews extends React.Component {
         }
 
         return (
-            <div className="NewsContainer">
-                {articlesDiv}
-                <br/>
+            <div>
+                <h1>Top India News</h1>
+                <div className="NewsContainer">
+                    {articlesDiv}
+                    <br/>
+                </div>
             </div>
             )
     }

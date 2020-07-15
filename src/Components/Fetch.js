@@ -29,6 +29,23 @@ export default class Fetch extends React.Component {
         //     })
     }
 
+    getdata=(topic)=>{
+        let query = ('https://gnews.io/api/v3/search?q=' + topic + '&image=required&token=1aad0666c399a5f300c2819342661969')
+        console.log(this.props.topic);
+        console.log(this.state.topic);
+        axios.get(query)
+            .then(res => {
+                console.log(res);
+                this.setState({ articles : res.data.articles});
+                console.log(this.state.articles);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+
+    }
+
     render() {
 
        
