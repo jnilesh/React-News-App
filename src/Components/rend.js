@@ -21,13 +21,15 @@ export default class Rend extends React.Component {
         if(this.state.articles !== this.props.articles){
             this.setState({          
                 articles : this.props.articles
+                statusText: this.props.statusText,
+                topic: this.props.topic, 
             });
         }
     }
 
     render() {
 
-        console.log("inside");
+        console.log("status");
         const articlesDiv = [];
         if (this.state.articles !== null && this.state.statusText === 'OK') {
             for (let i=0; i < this.state.articles.length; i += 1) {

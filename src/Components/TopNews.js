@@ -19,7 +19,6 @@ export default class TopNews extends React.Component {
             .then(res => {
                 this.setState({ articles : res.data.articles , statusText: res.statusText});
                 console.log("top news");
-                console.log(this.state.articles);
             })
             .catch(function (error) {
                 // handle error
