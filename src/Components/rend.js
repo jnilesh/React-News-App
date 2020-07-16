@@ -20,7 +20,7 @@ export default class Rend extends React.Component {
     componentDidUpdate(articles){
         if(this.state.articles !== this.props.articles){
             this.setState({          
-                articles : this.props.articles
+                articles : this.props.articles,
                 statusText: this.props.statusText,
                 topic: this.props.topic, 
             });
