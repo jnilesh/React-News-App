@@ -13,20 +13,23 @@ export default class App extends React.Component {
     this.state = {
          articles: null,
          topic: this.props.topic,
-         ready: false,
+         ready:false,
+         statusText: "",
  
     };
     this.getdata = this.getdata.bind(this);
-    this.turnback = this.turnback.bind(this);
   }
 
   getdata=(topic)=>{
-    let query = ('https://gnews.io/api/v3/search?q=' + topic + '&token=1aad0666c399a5f300c2819342661969')
+    // let query = ('https://gnews.io/api/v3/search?q=' + topic + '&token=0666b9658606f10439c9a1bc2c1f3347')
+    let query = ('http://newsapi.org/v2/everything?q=' + topic + '&apiKey=6b81ea3ddce64c7a97f6b754a64af8a2')
     console.log(query);
     axios.get(query)
         .then(res => {
-            this.setState({ articles : res.data.articles, ready: true});
+            console.log(res)
+            this.setState({ articles : res.data.articles,ready: true,statusText: res.statusText});
             console.log(this.state.articles);
+            console.log(this.state.statusText);
         })
         .catch(
           (error)=>{console.log("Error - "+error)}
@@ -34,9 +37,6 @@ export default class App extends React.Component {
 
   }
 
-  turnback=()=>{
-    console.log("turnback");
-  }
 
   render() {
     return (
@@ -45,7 +45,10 @@ export default class App extends React.Component {
         <SearchBar getdata={this.getdata} ></SearchBar>
         <br/>
 
-        {this.state.ready ? <Rend turnback={this.turnback} articles={this.state.articles}/> : <TopNews/> }
+        {this.state.ready ? <
+          Rend statusText={this.state.statusText} articles={this.state.articles}/> : 
+        <TopNews/> 
+        }
 
         {/* <Rend turnback={this.turnback} articles={this.state.articles}></Rend> */}
         

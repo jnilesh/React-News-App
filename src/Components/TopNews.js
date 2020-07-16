@@ -7,14 +7,18 @@ export default class TopNews extends React.Component {
     
         this.state = {
              articles: null,
+
         };
     }
     
 
     componentDidMount(){
-        axios.get('https://gnews.io/api/v3/search?q=india&country=in&max=20&image=required&token=1aad0666c399a5f300c2819342661969')
+        // axios.get('https://gnews.io/api/v3/search?q=india&country=in&max=20&image=required&token=031fbd6bd5b5cccf859871f467e9b93e')
+        axios.get('https://newsapi.org/v2/top-headlines?country=in&apiKey=6b81ea3ddce64c7a97f6b754a64af8a2')
             .then(res => {
                 this.setState({ articles : res.data.articles});
+                console.log("top news");
+                console.log(this.state.articles);
             })
             .catch(function (error) {
                 // handle error
@@ -27,13 +31,14 @@ export default class TopNews extends React.Component {
        
         const articlesDiv = [];
         if (this.state.articles !== null) {
-            for (let i=0; i < this.state.articles.length ; i += 1) {
+            let len = this.state.articles.length;
+            for (let i=0; i < len ; i += 1) {
                 const currentArticle = this.state.articles[i];
                 articlesDiv.push(
                     <div className="card mb-3" style={{maxWidth: "100%", }} >
                     <div className="row no-gutters">
                         <div className="col-md-4">
-                            <img src={currentArticle.image} className="card-img" alt='not available'/>
+                            <img src={currentArticle.urlToImage} className="card-img" alt='not available'/>
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
