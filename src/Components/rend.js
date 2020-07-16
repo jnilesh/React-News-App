@@ -36,13 +36,13 @@ export default class Rend extends React.Component {
                     <div className="ccard bg-light border-light rounded shadow-lg mb-3ard mb-3 animate__animated animate__zoomIn" key={i} style={{maxWidth: "100%", }} >
                         <div className="row no-gutters">
                             <div className="col-md-4">
-                                <img src={currentArticle.urlToImage} className="card-img" alt='not available'/>
+                                <img src={currentArticle.image} className="card-img" alt='not available'/>
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body bg-light" key={i}>
                                     <h5 className="card-title">{currentArticle.title}</h5>
                                     <p className="card-text"><small className="text-muted">{currentArticle.source.name}</small></p>
-                                    <p className="card-text"><a href={currentArticle.url}>{currentArticle.content}</a></p>
+                                    <p className="card-text"><a href={currentArticle.url}>{currentArticle.description}</a></p>
                                     <p className="card-text"><small className="text-muted">{currentArticle.publishedAt}</small></p>
                                 </div>
                             </div>
