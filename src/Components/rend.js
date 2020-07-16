@@ -57,7 +57,7 @@ export default class Rend extends React.Component {
 
         return (
             <div className="NewsContainer">
-                <h2 className="animate__animated animate__shakeX animate__delay-2s">Search result for {this.state.topic} </h2>
+                <h2 className="animate__animated animate__shakeX animate__delay-1s">Search result for {this.state.topic} </h2>
                 <br/>
                 {articlesDiv}
             

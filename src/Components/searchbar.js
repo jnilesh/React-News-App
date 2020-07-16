@@ -34,7 +34,7 @@ export default class SearchBar extends React.Component {
         
 
         return (
-             <div className="trans">
+             <div className="animate__animated animate__fadeIn animate__delay-1s">
 
                 <form onSubmit={this.handleSubmit} >
                     <span className="fa fa-search form-control-feedback"></span>

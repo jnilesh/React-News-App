@@ -43,7 +43,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <br/>
-        <center><h1 className="animate__animated animate__fadeInDown animate__delay-2s">News</h1></center>
+        <center><h1 ><p className="animate__animated animate__fadeInDown animate__delay-1s float-left text-primary" >WHASSUUUUP?</p></h1></center>
         <br/>
         <SearchBar getdata={this.getdata} ></SearchBar>
         <br/>
@@ -53,7 +53,6 @@ export default class App extends React.Component {
         <TopNews/> 
         }
 
-        {/* <Rend turnback={this.turnback} articles={this.state.articles}></Rend> */}
         
     </div>
        
