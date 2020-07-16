@@ -21,7 +21,6 @@ export default class SearchBar extends React.Component {
         this.props.getdata(topic);
         this.setState.currentSearch = true;
         // 031fbd6bd5b5cccf859871f467e9b93e
-        alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
     }
 
@@ -36,9 +35,10 @@ export default class SearchBar extends React.Component {
 
         return (
              <div className="trans">
-                 
+
                 <form onSubmit={this.handleSubmit} >
-                    <i className="fas fa-search" aria-hidden="true"/>
+                    <span className="fa fa-search form-control-feedback"></span>
+                    <i className="glyphicon glyphicon-search" aria-hidden="true"/>
                     <input className="form-control " type="text" placeholder="Search for another topic" aria-label="Search" value={this.state.value} onChange={this.handleChange}/>  
                 </form>
 

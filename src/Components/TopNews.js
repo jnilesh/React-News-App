@@ -14,7 +14,7 @@ export default class TopNews extends React.Component {
 
     componentDidMount(){
         // axios.get('https://gnews.io/api/v3/search?q=india&country=in&max=20&image=required&token=031fbd6bd5b5cccf859871f467e9b93e')
-        axios.get('https://newsapi.org/v2/top-headlines?country=in&apiKey=6b81ea3ddce64c7a97f6b754a64af8a2')
+        axios.get('https://newsapi.org/v2/top-headlines?country=in&pageSize=40&apiKey=9552332f84ee4642980836b89205e47d')
             .then(res => {
                 this.setState({ articles : res.data.articles});
                 console.log("top news");
@@ -35,7 +35,7 @@ export default class TopNews extends React.Component {
             for (let i=0; i < len ; i += 1) {
                 const currentArticle = this.state.articles[i];
                 articlesDiv.push(
-                    <div className="card bg-light border-light rounded shadow-lg mb-3" style={{maxWidth: "100%", }} >
+                    <div className="card bg-light border-light rounded shadow-lg mb-3 animate__animated animate__zoomIn" key={i} style={{maxWidth: "100%", }} >
                         <div className="row no-gutters">
                             <div className="col-md-4">
                                 <img src={currentArticle.urlToImage} className="card-img" alt='not available'/>
@@ -57,11 +57,11 @@ export default class TopNews extends React.Component {
 
         return (
             <div>
-                <h3>Top India Headlines</h3>
+                <h3 className="animate__animated animate__shakeX animate__delay-2s">Top India Headlines</h3>
                 <br/>
                 <div className="NewsContainer">
                     {articlesDiv}
-                    <br/>
+                
                 </div>
             </div>
             )
