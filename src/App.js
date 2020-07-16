@@ -24,10 +24,11 @@ export default class App extends React.Component {
     // let query = ('https://gnews.io/api/v3/search?q=' + topic + '&token=0666b9658606f10439c9a1bc2c1f3347')
     let query = ('http://newsapi.org/v2/everything?q=' + topic + '&apiKey=6b81ea3ddce64c7a97f6b754a64af8a2')
     console.log(query);
+  
     axios.get(query)
         .then(res => {
             console.log(res)
-            this.setState({ articles : res.data.articles,ready: true,statusText: res.statusText});
+            this.setState({ articles : res.data.articles,ready: true,statusText: res.statusText, topic: topic});
             console.log(this.state.articles);
             console.log(this.state.statusText);
         })
@@ -42,11 +43,13 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <br/>
+        <center><h1>News</h1></center>
+        <br/>
         <SearchBar getdata={this.getdata} ></SearchBar>
         <br/>
 
         {this.state.ready ? <
-          Rend statusText={this.state.statusText} articles={this.state.articles}/> : 
+          Rend topic={this.state.topic} statusText={this.state.statusText} articles={this.state.articles}/> : 
         <TopNews/> 
         }
 

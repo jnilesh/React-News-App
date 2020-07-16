@@ -35,11 +35,11 @@ export default class SearchBar extends React.Component {
         
 
         return (
-             <div>
-
+             <div className="trans">
+                 
                 <form onSubmit={this.handleSubmit} >
                     <i className="fas fa-search" aria-hidden="true"/>
-                    <input className="form-control" type="text" placeholder="Search for another topic" aria-label="Search" value={this.state.value} onChange={this.handleChange}/>  
+                    <input className="form-control " type="text" placeholder="Search for another topic" aria-label="Search" value={this.state.value} onChange={this.handleChange}/>  
                 </form>
 
              </div>
