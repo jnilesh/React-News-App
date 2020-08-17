@@ -26,3 +26,7 @@ background: radial-gradient(circle, rgba(214,63,251,1) 0%, rgba(197,65,251,1) 88
   font-size: 20px;
   z-index: 10;
 }
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
