@@ -18,13 +18,13 @@ export default class Rend extends React.Component {
         let newArticle = [];
         if (this.props.articles !== null) {
             newArticle = this.props.articles.map((article) => 
-                <div onClick={()=> {this.handleSubmit(article.url)}} key={article.url} className="card bg-light border-light rounded shadow-lg mb-3ard mb-3 animate__animated animate__zoomIn pointer" style={{maxWidth: "100%"}} >
+                <div onClick={()=> {this.handleSubmit(article.url)}} key={article.url} className="card border-light rounded shadow-lg mb-3 animate__animated animate__zoomIn pointer" style={{maxWidth: "100%"}} >
                         <div className="row no-gutters">
                          
                                 { article.image && <div className="col-md-4"> <img src={article.image} className="card-img" alt='not available'/></div>}
                         
                             <div className="col-md-8 ml-auto mr-auto">
-                                <div className="card-body bg-light">
+                                <div className="card-body">
                                     <h5 className="card-title">{article.title}</h5>
                                     <p className="card-text"><small className="text-muted">{article.source.name}</small></p>
                                     {article.description && <p className="card-text">{article.description}</p>}

@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './searchbar'
 import Category from './Category'
 import Rend from './rend'
+import Header from './HeaderComponent'
 // import Fetch from "./Components/Fetch"
 import { Loading } from './LoadingComponent';
 import { connect } from 'react-redux';
@@ -59,10 +60,9 @@ class Main extends React.Component {
 
     return (
       <div>
-        <br/>
-        <h1 ><center><p className="animate__animated animate__fadeInDown animate__delay-1s text-primary" >HEADNEWS</p></center></h1>
+      <Header setCategory={this.setCategory}/>
+      <div className="container">
         <SearchBar setTopic={this.setTopic} />
-        <center><Category setCategory={this.setCategory} /></center>
         <br/>
          <Rend 
          topic={this.state.topic} 
@@ -70,6 +70,7 @@ class Main extends React.Component {
          newsLoading={this.props.articles.isLoading}
          newsErrMess={this.props.articles.errMess}
               />
+        </div>
     </div>
        
     );
