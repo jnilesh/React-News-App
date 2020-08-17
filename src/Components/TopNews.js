@@ -38,7 +38,7 @@ export default class TopNews extends React.Component {
                     <div className="card bg-light border-light rounded shadow-lg mb-3 animate__animated animate__zoomIn" key={i} style={{maxWidth: "100%", }} >
                         <div className="row no-gutters">
                             <div className="col-md-4">
-                                <img src={currentArticle.image} className="card-img" alt='not available'/>
+                                {currentArticle.image && <img src={currentArticle.image} className="card-img" alt='not available'/>}
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body ">

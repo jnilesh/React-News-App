@@ -3,67 +3,73 @@ import React from 'react';
 export default class Rend extends React.Component {
 
     constructor(props) {
-        super(props)
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+    handleSubmit(url){
+        console.log(url)
+        window.location.href = url;
+    }
+
     
-        this.state = {
-             articles: props.articles,
-             statusText: props.statusText,
-             topic: props.topic,           
-        };
-    }
-
-    componentDidMount() {
-        this.setState({});
-      }
-
-
-    componentDidUpdate(articles){
-        if(this.state.articles !== this.props.articles){
-            this.setState({          
-                articles : this.props.articles,
-                statusText: this.props.statusText,
-                topic: this.props.topic, 
-            });
-        }
-    }
 
     render() {
 
-        console.log("status");
-        const articlesDiv = [];
-        if (this.state.articles !== null && this.state.statusText === 'OK') {
-            for (let i=0; i < this.state.articles.length; i += 1) {
-                const currentArticle = this.state.articles[i];
-                articlesDiv.push(
-                    <div className="ccard bg-light border-light rounded shadow-lg mb-3ard mb-3 animate__animated animate__zoomIn" key={i} style={{maxWidth: "100%", }} >
+        let newArticle = [];
+        if (this.props.articles !== null) {
+            newArticle = this.props.articles.map((article) => 
+                <div onClick={()=> {this.handleSubmit(article.url)}} key={article.url} className="card bg-light border-light rounded shadow-lg mb-3ard mb-3 animate__animated animate__zoomIn pointer" style={{maxWidth: "100%"}} >
                         <div className="row no-gutters">
-                            <div className="col-md-4">
-                                <img src={currentArticle.image} className="card-img" alt='not available'/>
-                            </div>
-                            <div className="col-md-8">
-                                <div className="card-body bg-light" key={i}>
-                                    <h5 className="card-title">{currentArticle.title}</h5>
-                                    <p className="card-text"><small className="text-muted">{currentArticle.source.name}</small></p>
-                                    <p className="card-text"><a href={currentArticle.url}>{currentArticle.description}</a></p>
-                                    <p className="card-text"><small className="text-muted">{currentArticle.publishedAt}</small></p>
+                         
+                                { article.image && <div className="col-md-4"> <img src={article.image} className="card-img" alt='not available'/></div>}
+                        
+                            <div className="col-md-8 ml-auto mr-auto">
+                                <div className="card-body bg-light">
+                                    <h5 className="card-title">{article.title}</h5>
+                                    <p className="card-text"><small className="text-muted">{article.source.name}</small></p>
+                                    {article.description && <p className="card-text">{article.description}</p>}
+                                    <p className="card-text"><small className="text-muted">{article.publishedAt}</small></p>
                                 </div>
                             </div>
+                            
                         </div>
                      </div>
-
-                )
-            }
+            );
+                
         }else{
             console.log('conditon not satisfied')
         }
 
         return (
             <div className="NewsContainer">
-                <h2 className="animate__animated animate__shakeX animate__delay-1s">Search result for {this.state.topic} </h2>
+                <h2 className="animate__animated animate__shakeX animate__delay-1s">Search result for {this.props.topic}</h2>
                 <br/>
-                {articlesDiv}
+                {newArticle}
             
             </div>
             )
     }
 }
+
+
+
+// function artRend({currentArticle},{key}) {
+//     const img = currentArticle.image
+//     return
+//         <div className="card bg-light border-light rounded shadow-lg mb-3ard mb-3 animate__animated animate__zoomIn" key={key} style={{maxWidth: "100%", }} >
+//                         <div className="row no-gutters">
+//                             { img ? <div className="col-md-4">
+//                                                             <img src={currentArticle.image} className="card-img" alt='not available'/>
+//                                                         </div> : null}
+//                             <div className="col-md-8">
+//                                 <div className="card-body bg-light">
+//                                     <h5 className="card-title">{currentArticle.title}</h5>
+//                                     <p className="card-text"><small className="text-muted">{currentArticle.source.name}</small></p>
+//                                     <p className="card-text"><a href={currentArticle.url}>{currentArticle.description}</a></p>
+//                                     <p className="card-text"><small className="text-muted">{currentArticle.publishedAt}</small></p>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                      </div> 
+// }

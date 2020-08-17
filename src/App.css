@@ -11,3 +11,8 @@ background: radial-gradient(circle, rgba(214,63,251,1) 0%, rgba(197,65,251,1) 88
     background: rgb(214,63,251);
     background: radial-gradient(circle, rgba(214,63,251,1) 0%, rgba(197,65,251,1) 88%, rgba(152,70,252,1) 100%);  
 } */
+
+.pointer
+{
+    cursor: pointer;
+}
