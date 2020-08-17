@@ -16,3 +16,13 @@ background: radial-gradient(circle, rgba(214,63,251,1) 0%, rgba(197,65,251,1) 88
 {
     cursor: pointer;
 }
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+
+  padding: 20px;
+  font-size: 20px;
+  z-index: 10;
+}

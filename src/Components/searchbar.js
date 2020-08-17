@@ -36,12 +36,12 @@ export default class SearchBar extends React.Component {
         
 
         return (
-             <div className="animate__animated animate__fadeIn animate__delay-1s">
+             <div className="animate__animated animate__fadeIn animate__delay-1s sticky">
 
                 <form onSubmit={this.handleSubmit} >
-                    <span className="fa fa-search form-control-feedback"></span>
-                    <i className="glyphicon glyphicon-search" aria-hidden="true"/>
-                    <input className="form-control " type="text" placeholder="Search for another topic" aria-label="Search" value={this.state.value} onChange={this.handleChange}/>  
+                    
+                    
+                    <input className="form-control" type="text" placeholder="Search News for other topic" aria-label="Search" value={this.state.value} onChange={this.handleChange}/>
                 </form>
 
              </div>

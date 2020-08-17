@@ -61,9 +61,7 @@ class Main extends React.Component {
       <div>
         <br/>
         <h1 ><center><p className="animate__animated animate__fadeInDown animate__delay-1s text-primary" >HEADNEWS</p></center></h1>
-        <br/>
         <SearchBar setTopic={this.setTopic} />
-        <br/>
         <center><Category setCategory={this.setCategory} /></center>
         <br/>
          <Rend 

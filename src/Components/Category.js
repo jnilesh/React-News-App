@@ -9,7 +9,6 @@ class Category extends Component{
 
 	handleSubmit(topic){
 		this.props.setCategory(topic);
-		console.log(topic)
 	}
 
 	render(){
