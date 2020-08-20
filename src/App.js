@@ -11,9 +11,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-          <div className="App">
+          <React.Fragment>
             <Main />
-          </div>
+          </React.Fragment>
       </Provider>
     );
   }

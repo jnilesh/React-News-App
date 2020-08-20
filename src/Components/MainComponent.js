@@ -1,8 +1,8 @@
 import React from 'react';
 import SearchBar from './searchbar'
-import Category from './Category'
 import Rend from './rend'
 import Header from './HeaderComponent'
+import  Sidebar from './Sidebar'
 // import Fetch from "./Components/Fetch"
 import { Loading } from './LoadingComponent';
 import { connect } from 'react-redux';
@@ -59,8 +59,10 @@ class Main extends React.Component {
     }
 
     return (
-      <div>
-      <Header setCategory={this.setCategory}/>
+      <React.Fragment>
+      
+      <Sidebar setCategory={this.setCategory} />
+      <Header/>
       <div className="container">
         <SearchBar setTopic={this.setTopic} />
         <br/>
@@ -71,10 +73,11 @@ class Main extends React.Component {
          newsErrMess={this.props.articles.errMess}
               />
         </div>
-    </div>
+    </React.Fragment>
        
     );
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
+
