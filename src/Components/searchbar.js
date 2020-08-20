@@ -39,12 +39,12 @@ export default class SearchBar extends React.Component {
              <div className="animate__animated animate__fadeIn animate__delay-1s sticky">
 
                 <form onSubmit={this.handleSubmit} >
-                 <div class="input-group mb-3">
+                 <div className="input-group mb-3">
                   
                   <input className="form-control" type="text" placeholder="Search News for other topic" aria-label="Search" value={this.state.value} onChange={this.handleChange}/>
-                    <div class="input-group-prepend">
+                    <div className="input-group-prepend">
                     
-                        <button type="submit" class="input-group-text fa fa-search form-control-feedback"/>
+                        <button type="submit" className="input-group-text fa fa-search form-control-feedback"/>
                     
                   </div>
                  </div>   

@@ -7,7 +7,8 @@ export default class Header extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(topic){
+  handleSubmit(){
+    window.location.href="/"
   }
 
 
@@ -16,11 +17,11 @@ export default class Header extends React.Component {
         
 
         return (
-          <div class="jumbotron jumbotron-fluid animate__animated animate__fadeInDown animate__delay-1s">
-              <div class="container">
+          <div  className="jumbotron jumbotron-fluid animate__animated animate__fadeInDown animate__delay-1s ">
+              <div  className="container">
 
-                <h1 class="display-4 row ml-1"><strong><i class="fa fa-newspaper-o" aria-hidden="true"></i> Headnews</strong></h1>
-                <p class="lead">Because Information is Power, So let us make you Powerfull!!!</p>
+                <h1 onClick={()=> {this.handleSubmit()}} className="display-4 row ml-1 pointer"><strong><i className="fa fa-newspaper-o" aria-hidden="true"></i> Headnews</strong></h1>
+                <p className="lead">Because Information is Power, So let us make you Powerfull!!!</p>
               </div>
             </div>
         );

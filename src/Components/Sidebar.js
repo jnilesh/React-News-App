@@ -21,7 +21,7 @@ export default class Sidebar extends React.Component {
         	<nav className="navbar animate__animated animate__fadeInLeft animate__delay-1s">
 				    <ul className="navbar-nav">
 				      <li className="logo">
-				        <a href="#" className="nav-link">
+				        <a href="/" className="nav-link">
 				          <span className="link-text logo-text">Headnews</span>
 				          <svg
 				            aria-hidden="true"
@@ -51,42 +51,42 @@ export default class Sidebar extends React.Component {
 
 				      <li onClick={()=>{this.handleSubmit("business")}} className="nav-item">
 				        <a href="#" className="nav-link">
-				          <i class="fas fa-briefcase fa-3x"></i>
+				          <i className="fas fa-briefcase fa-3x"></i>
 				          <span className="link-text">Business</span>
 				        </a>
 				      </li>
 
 				      <li onClick={()=>{this.handleSubmit("technology")}} className="nav-item">
 				        <a href="#" className="nav-link">
-				          <i class="fas fa-microchip fa-3x"></i>
+				          <i className="fas fa-microchip fa-3x"></i>
 				          <span className="link-text">Technology</span>
 				        </a>
 				      </li>
 
 				      <li onClick={()=>{this.handleSubmit("entertainment")}} className="nav-item">
 				        <a href="#" className="nav-link">
-				          <i class="fas fa-film fa-3x"></i>
+				          <i className="fas fa-film fa-3x"></i>
 				          <span className="link-text">Entertainment</span>
 				        </a>
 				      </li>
 
 				      <li onClick={()=>{this.handleSubmit("sports")}} className="nav-item">
 				        <a href="#" className="nav-link">
-				          <i class="fas fa-football-ball fa-3x"></i>
+				          <i className="fas fa-football-ball fa-3x"></i>
 				          <span className="link-text">Sports</span>
 				        </a>
 				      </li>
 
 				      <li onClick={()=>{this.handleSubmit("science")}} className="nav-item" id="themeButton">
 				        <a href="#" className="nav-link">
-				          <i class="	fas fa-flask fa-3x"></i>
+				          <i className="fas fa-flask fa-3x"></i>
 				          <span className="link-text">Science</span>
 				        </a>
 				      </li>
 
 				      <li onClick={()=>{this.handleSubmit("health")}} className="nav-item" id="themeButton">
 				        <a href="#" className="nav-link">
-				          <i class="fas fa-heartbeat fa-3x"></i>
+				          <i className="fas fa-heartbeat fa-3x"></i>
 				          <span className="link-text">Health</span>
 				        </a>
 				      </li>
